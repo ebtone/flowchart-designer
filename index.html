@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+ <head>
+<!--[if lt IE 9]>
+<?import namespace="v" implementation="#default#VML" ?>
+<![endif]-->
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="flowchart.css"/>
+  <script type="text/javascript" src="jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="flowchart.graphics.js"></script>
+  <script type="text/javascript" src="flowchart.ui.js"></script>
+  <title>Document</title>
+ </head>
+ <body>
+  <div id="flowchart" style="margin:0;padding:0;"></div>
+  <script type="text/javascript">
+  $(document).ready(function(){
+	  var flowchart = $('#flowchart').flowchart({
+		  dataRepository: [{
+			  title: 'flow1',
+			  remarks: '明搞定了现场',
+			  created: '2016-09-23 14:12:10',
+			  "nodeSet": {
+				"flowchart-node1": {
+					"text": "初始节点",
+					"shape": "round",
+					"id": "flowchart-node1",
+					"left": 286,
+					"top": 164,
+					"kind": "initial",
+					"width": 48,
+					"height": 48,
+					"alt": true
+				}
+			  }
+		  }, {
+			  title: 'flow2',
+			  remarks: '好听的流课堂改革图',
+			  created: '2016-09-23 14:12:10',
+			  "nodeSet": {
+				"flowchart-node1": {
+					"text": "初始节点",
+					"shape": "round",
+					"id": "flowchart-node1",
+					"left": 186,
+					"top": 64,
+					"kind": "initial",
+					"width": 48,
+					"height": 48,
+					"alt": true
+				}
+			  }
+		  }, {
+			  title: 'flow3',
+			  remarks: '简单流程图',
+			  created: '2016-09-23 14:12:10',
+			  "lineSet": {
+				"flowchart-line4": {
+					"text": "线条1",
+					"style": "sl",
+					"kind": "line",
+					"marked": false,
+					"dashed": false,
+					"id": "flowchart-line4",
+					"from": "flowchart-node1",
+					"to": "flowchart-node3"
+				},
+				"flowchart-line5": {
+					"text": "线条2",
+					"style": "sl",
+					"kind": "line",
+					"marked": false,
+					"dashed": false,
+					"id": "flowchart-line5",
+					"from": "flowchart-node3",
+					"to": "flowchart-node2"
+				},
+				"flowchart-line7": {
+					"text": "线条3",
+					"style": "b2t",
+					"kind": "line",
+					"marked": false,
+					"dashed": false,
+					"id": "flowchart-line7",
+					"from": "flowchart-node3",
+					"to": "flowchart-node6",
+					"alt": true,
+					"mid": 338.5
+				},
+				"flowchart-line9": {
+					"text": "线条4",
+					"style": "sl",
+					"kind": "line",
+					"marked": false,
+					"dashed": false,
+					"id": "flowchart-line9",
+					"from": "flowchart-node6",
+					"to": "flowchart-node8"
+				},
+				"flowchart-line10": {
+					"text": "线条5",
+					"style": "l2r",
+					"kind": "line",
+					"marked": false,
+					"dashed": false,
+					"id": "flowchart-line10",
+					"from": "flowchart-node2",
+					"to": "flowchart-node8",
+					"alt": true,
+					"mid": 698
+				}
+				},
+				"nodeSet": {
+					"flowchart-node1": {
+						"text": "初始节点",
+						"shape": "round",
+						"id": "flowchart-node1",
+						"left": 186,
+						"top": 64,
+						"kind": "initial",
+						"width": 48,
+						"height": 48,
+						"alt": true
+					},
+					"flowchart-node2": {
+						"text": "子流程节点1",
+						"shape": "roundRect",
+						"id": "flowchart-node2",
+						"left": 431,
+						"top": 237,
+						"kind": "process",
+						"color": "#B6F700",
+						"width": 160,
+						"height": 48,
+						"alt": true
+					},
+					"flowchart-node3": {
+						"text": "决策节点1",
+						"shape": "rhombus",
+						"id": "flowchart-node3",
+						"left": 186,
+						"top": 237,
+						"kind": "decision",
+						"color": "#ff3300",
+						"width": 48,
+						"height": 48,
+						"alt": true
+					},
+					"flowchart-node6": {
+						"text": "子流程节点2",
+						"shape": "roundRect",
+						"id": "flowchart-node6",
+						"left": 431,
+						"top": 392,
+						"kind": "process",
+						"color": "#B6F700",
+						"width": 160,
+						"height": 48,
+						"alt": true
+					},
+					"flowchart-node8": {
+						"text": "结束节点",
+						"shape": "round",
+						"id": "flowchart-node8",
+						"left": 487,
+						"top": 538,
+						"kind": "final",
+						"width": 48,
+						"height": 48,
+						"alt": true
+					}
+				}
+		  }],
+		  //dataRepository: 'http://wx.shenzhenshouxin.com/static/flowcharts.json',
+		  width: 'auto',
+		  height: 'auto',
+		  menubar: {
+			  visible: true,
+			  items: ['new', 'save', 'open', 'reload']
+		  },
+		  buttonbar: {
+			  visible: true,
+			  items: [{ name: 'initial', shape: 'round' }, { name: 'final', shape: 'round' }, '-', 'action', 'process', { name: 'decision', shape: 'rhombus' }, '-', 'fork', 'join', 'xxxx', 'xxxx']
+		  },
+		  propertyGrid: {
+			  visible: true
+		  }
+	  });
+  });
+  </script>
+ </body>
+</html>
